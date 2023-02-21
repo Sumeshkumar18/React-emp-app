@@ -5,10 +5,11 @@ import { Link, useParams } from "react-router-dom";
 export default function Home() {
   const [users, setUsers] = useState([]);
 
-  const { id } = useParams();
+  // const { id } = useParams();
 
   useEffect(() => {
     loadUsers();
+    sessionStorage.setItem("isLoggedIn",true)
   }, []);
 
   const loadUsers = async () => {
